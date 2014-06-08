@@ -27,3 +27,8 @@ def parse_s3_log_line(line):
 def dump_parsed_s3_line(parsed):
     for (name, val) in zip(s3_names, parsed):
         print("%s: %s" % (name, val))
+
+
+def main():
+    for line in sys.stdin:
+        print parse_s3_log_line(line)
